@@ -26,12 +26,12 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Utilizacao">Utilização</a>
                         </li>
                     </ul>
-                    <div class="d-flex align-items-center">
+                    <div id="menu" class="d-flex align-items-center">
                         <button id="theme-toggle" class="btn btn-outline-dark">
                             <i class="fas fa-moon"></i> <!-- Ícone de alternância de tema -->
                         </button>
-                        <a href="#" class="me-3 text-dark">
-                            <i class="fas fa-cog"></i> <!-- Ícone de engrenagem -->
+                        <a id ="config" href="#" class="me-3 text-dark">
+                            <i id="conficon" class="fas fa-cog"></i> <!-- Ícone de engrenagem -->
                         </a>
                     </div>
                 </div>
@@ -45,11 +45,11 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - C_SendMail - @* <a asp-area="" asp-controller="Home" asp-action="Utilizacao">Utilização</a> *@
-        </div>
-    </footer>
+   <footer>
+    <div class="rodape">
+        &copy; 2024 - C_SendMail
+    </div>
+</footer>
 
     <script src="@Url.Content("~/lib/jquery/dist/jquery.min.js")"></script>
     <script src="@Url.Content("~/lib/bootstrap/dist/js/bootstrap.bundle.min.js")"></script>
