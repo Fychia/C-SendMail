@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+/* Estilo para modo escuro */
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+    .dark-mode .navbar {
+        background-color: #333;
+    }

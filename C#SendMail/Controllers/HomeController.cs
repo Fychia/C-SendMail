@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using C_SendMail.Models;
 using System.Threading.Tasks;
 
 namespace C_SendMail.Controllers;
@@ -84,7 +85,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Utilizacao()
     {
         return View();
     }
@@ -94,11 +95,4 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-}
-
-// Classe Cliente para mapear dados do CSV
-public class Client
-{
-    public string Nome { get; set; }
-    public string Email { get; set; }
 }

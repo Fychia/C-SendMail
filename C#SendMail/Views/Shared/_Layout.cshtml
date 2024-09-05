@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - C_SendMail</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/C_SendMail.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="@Url.Content("~/lib/bootstrap/dist/css/bootstrap.min.css")" />
+    <link rel="stylesheet" href="@Url.Content("~/css/site.css")" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
     <header>
@@ -23,15 +23,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li><li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Sobre">Sobre</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Utilizacao">Utilização</a>
                         </li>
                     </ul>
+                    <div class="d-flex align-items-center">
+                        <button id="theme-toggle" class="btn btn-outline-dark">
+                            <i class="fas fa-moon"></i> <!-- Ícone de alternância de tema -->
+                        </button>
+                        <a href="#" class="me-3 text-dark">
+                            <i class="fas fa-cog"></i> <!-- Ícone de engrenagem -->
+                        </a>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -40,12 +47,29 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2024 - C_SendMail - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2024 - C_SendMail - @* <a asp-area="" asp-controller="Home" asp-action="Utilizacao">Utilização</a> *@
         </div>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="@Url.Content("~/lib/jquery/dist/jquery.min.js")"></script>
+    <script src="@Url.Content("~/lib/bootstrap/dist/js/bootstrap.bundle.min.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        $(document).ready(function ()
+        {
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            let isDarkMode = false;
+
+            themeToggleBtn.addEventListener('click', () =>
+            {
+                document.body.classList.toggle('dark-mode');
+                isDarkMode = !isDarkMode;
+                themeToggleBtn.innerHTML = isDarkMode ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            });
+        });
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

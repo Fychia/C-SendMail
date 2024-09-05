@@ -1,8 +1,7 @@
-﻿namespace C_SendMail.Models
+﻿namespace C_SendMail.Models;
+
+public class Client
 {
-    public class Client
-    {
-        public string Nome { get; set; }
-        public string Email { get; set; }
-    }
+    public string Nome { get; set; }
+    public string Email { get; set; }
 }
